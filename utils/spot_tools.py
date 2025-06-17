@@ -1,9 +1,13 @@
 from dataclasses import dataclass
-
-@dataclass()
-class Spot:
-    spot:str = ""
+import rawpy
 
 @dataclass()
 class Photo:
-    spot:str = ""
+
+    photo_path:str
+    run_number:int
+    led_serial:int
+    channel:str    | None = None
+    distance:float | None = None
+    voltage:float  | None = None
+

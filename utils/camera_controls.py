@@ -131,6 +131,20 @@ class Camera:
         """
         return self.set_config("/main/capturesettings/shutterspeed", choice)
 
+    def list_config(self) -> subprocess.CompletedProcess[str]:
+        """Lists basic configuration options for a camera.
+
+        Returns:
+            Completed process result with configuration list.
+        """
+        return self.__run_gcode(["--list-config"])
+
+    def capture_photo(self, photo_dir:str, prefix:str, debug:bool = False) -> subprocess.CompletedProcess[str]:
+        args = [
+            '--capture-image-and-download', 
+            f'--filename={photo_dir}/{prefix}_%Y-%m-%d-T%H%M%S.%C'
+        ]
+        return self.__run_gcode(args)
 
 @dataclass
 class gphoto2:

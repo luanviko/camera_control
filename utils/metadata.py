@@ -10,8 +10,10 @@ class Run:
     date:str
     data_path:str
     camera_port:str
+    prefix:str | None = None
     info_path:str = field(init=False)
     run_info:str = field(init=False)
+    
 
     def __post_init__(self) -> None:
 
@@ -25,10 +27,12 @@ class Run:
             'camera_port ': self.camera_port
         }
 
+        self.photo_dir = f"{self.data_path}/photos"
+
+        if self.prefix == None:
+            self.prefix = f'Run-{self.run_number}'
+
     def save_run_info(self) -> None:
         print('Run info saved at:', self.info_path)
         with open(self.info_path, 'w') as json_output:
             json.dump(self.run_info, json_output)
-
-    def create_folders(self) -> None:
-        pass
