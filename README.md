@@ -1,6 +1,18 @@
 # camera_control
 
-# Repository Structure
+To test the relative alignmnet and light-output quality of the collimated light from the LED-FEB system, we take photos of the collimated light projected to a grid with the Sony α7R IV camera. 
+
+This app is a gphoto2 wrapper which allows you to change settings of and capture photos from the Sony α7R IV camera. 
+
+It also allows you to try finding the spots and position of the spots to ensure data quality.
+
+## Repository Structure
+
+The __data\_acquisition.ipynb__ notebook is the basic data-acquisition and visualization of this project. The __tutorial.ipynb__ notebook, in turn, contains examples of how to connect to the camera, change ISO and shutter speed, and take photos.
+
+Both notebooks call the classes and methods defined in the __./utils__ folder. While __camera\_controls.py__ has the basic Camera and GPhoto classes, for camera management and control, __metadata.py__ has classes to manage data-acquisition runs, and __spot\_tools.py__ contains the Photo class, to preprocess images and ensure maximal photo quality during acquisition. 
+
+```text
 .
 ├── utils
 │   ├── __init__.py 
@@ -8,18 +20,43 @@
 │   ├── metadata.py
 │   └── spot_tools.py
 ├── data_acquisition.ipynb
-├── tutorial.ipynb
-└── README.md
+├── README.md
+└── tutorial.ipynb
+```
 
-# Data Directory
 
+## Data Structure
+
+When initializing a __Run__ object, you must provide __data\_dir__, a path to a directory that will contain three folders: photos, run_info, spots. You do not need to create a new folder for each run. 
+
+```text
 data_dir
 ├── photos
 ├── run_info
 └── spots
+```
 
+## Starting a Camera Object
+
+Use `GPhoto.auto_connect()` to automatically look for all the cameras find the Sony Sony α7R IV's __port\_number__.  
+
+Now, initialize the Camera object using this port number. For example:
+
+```python
+sony = Camera(port=port_number)
+```
+
+## Taking a Photo
+
+
+
+`Camera.capture_photo()`
+
+## Changing ISO and Shutter Speed
 
 ### ISO Choices
+
+To list all ISO options, please use `Camera.list_iso()` method. Below is a table with all the choices available for the Sony α7R IV camera.
 
 |   Choice | ISO    |
 |---------:|:-------|
@@ -61,6 +98,8 @@ data_dir
 
 
 ### Shutter Speed Choices
+
+To list all ISO options, please use `Camera.list_shutterspeed()` method. Below is a table with all the choices available for the Sony α7R IV camera.
 
 |   Choice | Shutter Speed   |
 |---------:|:----------------|

@@ -4,14 +4,13 @@ __doc__ = 'Classes to control camera, change capture settings, find spots and te
 
 from .metadata import Run
 from .camera_controls import Camera, gphoto2
-from .spot_tools import Photo, Spot
+from .spot_tools import Photo
 
 __all__ = [
     'Run', 
     'Camera',
     'gphoto2',
-    'Photo',
-    'Spot'
+    'Photo'
 ]
 
 print(f"Initializing utils packages v{__version__}")
