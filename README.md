@@ -8,7 +8,7 @@ It also allows you to try finding the spots and position of the spots to ensure 
 
 ## Repository Structure
 
-The __data\_acquisition.ipynb__ notebook is the basic data-acquisition and visualization of this project. The __tutorial.ipynb__ notebook, in turn, contains examples of how to connect to the camera, change ISO and shutter speed, and take photos.
+The __tutorial.ipynb__ notebook, in turn, contains examples of how to connect to the camera, change ISO and shutter speed, and take photos.
 
 Both notebooks call the classes and methods defined in the __./utils__ folder. While __camera\_controls.py__ has the basic Camera and GPhoto classes, for camera management and control, __metadata.py__ has classes to manage data-acquisition runs, and __spot\_tools.py__ contains the Photo class, to preprocess images and ensure maximal photo quality during acquisition. 
 

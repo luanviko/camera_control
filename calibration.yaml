@@ -1,0 +1,33 @@
+info:
+  number: 9999
+  calibration photo: null
+
+scale x:
+  a:  1
+  b:  0
+  da: 0
+  db: 0
+
+scale y:
+  a:  1
+  b:  0
+  da: 0
+  db: 0
+
+grid:
+
+  NW:
+    - 4304
+    - 2856
+  
+  SW:
+    - 4304
+    - 3355
+  
+  NE:
+    - 5075
+    - 2856
+
+  SE:
+    - 5075
+    - 3355

@@ -1,0 +1,14 @@
+run parameters:
+  number: 9998
+  led serial: 0001
+  data directory: /home/lkoerich/Dropbox/Work/LED_FEB/camera_control/data
+  led channels:  
+    - 1
+  no. of photos per channel: 1
+  distances (mm): 
+    - 5000
+
+camera settings:
+  iso: 32 # 64000
+  shutter speed: 6 # 10 sec
+  prefix: Null
